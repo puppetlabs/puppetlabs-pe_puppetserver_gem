@@ -12,3 +12,7 @@ For PE Puppet Server:
 
 This uses gem as a parent and uses the PE version of the
 `puppetserver gem` command for all gem operations.
+
+## Deprecation for Puppet >= 4.0
+
+As of Puppet 4.0, this module has been deprecated. Please use the puppet_gem provider instead.

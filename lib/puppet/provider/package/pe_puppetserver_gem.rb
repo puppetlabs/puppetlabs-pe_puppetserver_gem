@@ -13,6 +13,14 @@ Puppet::Type.type(:package).provide :pe_puppetserver_gem, :parent => :gem do
 
   commands :puppetservercmd => "/opt/puppet/bin/puppetserver"
 
+  def self.instances
+    if Puppet[:version].to_f >= 4.0
+      warn "DEPRECATION: As of Puppet 4.0, the pe_puppetserver_gem provider for the package resource has been deprecated. Please use the puppetserver_gem provider instead."
+    end
+
+    super
+  end
+
   def self.gemlist(options)
     gem_list_command = [command(:puppetservercmd), "gem", "list"]
 
