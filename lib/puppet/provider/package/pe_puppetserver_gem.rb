@@ -11,7 +11,11 @@ Puppet::Type.type(:package).provide :pe_puppetserver_gem, :parent => :gem do
 
   has_feature :versionable
 
-  commands :puppetservercmd => "/opt/puppet/bin/puppetserver"
+  if Facter.value(:pe_server_version) =~ /^20/
+    commands :puppetservercmd => "/opt/puppetlabs/server/bin/puppetserver"
+  else
+    commands :puppetservercmd => "/opt/puppet/bin/puppetserver"
+  end
 
   def self.gemlist(options)
     gem_list_command = [command(:puppetservercmd), "gem", "list"]
