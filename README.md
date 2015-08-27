@@ -1,14 +1,7 @@
 # puppetlabs pe_puppetserver_gem module
 
-This module provides management of Ruby gems for PE Puppet Server.
+This module is deprecated please use the puppetlabs puppetserver_gem
 
+GitHub: https://github.com/puppetlabs/puppetlabs-puppetserver_gem
 
-For PE Puppet Server:
-
-    package { 'json':
-      ensure   => present,
-      provider => pe_puppetserver_gem,
-    }
-
-This uses gem as a parent and uses the PE version of the
-`puppetserver gem` command for all gem operations.
+Forge : https://forge.puppetlabs.com/puppetlabs/puppetserver_gem
